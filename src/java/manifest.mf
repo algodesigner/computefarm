@@ -1,0 +1,2 @@
+Main-Class: org.tiling.computefarm.impl.javaspaces.worker.MulticastWorker
+Class-Path: jini-core-2.0_1.jar jini-ext-2.0_1.jar JSpaces.jar

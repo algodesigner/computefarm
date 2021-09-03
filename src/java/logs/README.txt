@@ -1,0 +1,1 @@
+To control the logs in this directory see logging.properties in the parent directory.

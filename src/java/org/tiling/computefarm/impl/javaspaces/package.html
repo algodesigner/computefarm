@@ -1,0 +1,20 @@
+<html>
+<body>
+<p>
+A JavaSpaces implementation of <i>ComputeFarm</i>.
+</p>
+<p>
+The following system properties are available to the ComputeSpace client (JobRunner):
+</p>
+<ul>
+<li><code>org.tiling.computefarm.impl.javaspaces.DontReloadClasses</code> - setting this to <code>true</code> to true will cause the JavaSpaces JobRunner to not send a reload classes signal to workers (defaults to <code>false</code>)</li>
+<li><code>org.tiling.computefarm.impl.javaspaces.MaxResultLifetime</code> - the maximum time, in milliseconds, that a result object can remain in the JavaSpace before being reaped (defaults to 5 minutes)</li>
+</ul>
+<p>
+The following system properties are available to the ComputeSpace worker:
+</p>
+<ul>
+<li><code>org.tiling.computefarm.impl.javaspaces.MaxTaskExecutionTime</code> - the time, in milliseconds, after which the task is aborted and returned to the space (defaults to 5 minutes)</li>
+</ul>
+</body>
+</html>

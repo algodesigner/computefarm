@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<project default="all" xmlns:j="jelly:core" xmlns:ant="jelly:ant" xmlns:deploy="deploy">
+	<goal name="all">
+		<echo message="${maven.repo.local}"/>
+		<attainGoal name="jar:install" />
+		<attainGoal name="dist" />
+	</goal>
+	<postGoal name="java:compile">
+		<j:if test="${context.getVariable('maven.rmi.classes') != null}">
+			<rmic base="${maven.build.dest}"
+					includes="${maven.rmi.classes}">
+				<classpath refid="maven.dependency.classpath"/>
+			</rmic>
+		</j:if>
+	</postGoal>	
+	<postGoal name="dist:prepare-bin-filesystem">
+	    <ant:copy todir="${maven.dist.bin.assembly.dir}">
+	      <ant:fileset dir="src/java/">
+	        <ant:include name="jeri.config"/>
+	        <ant:include name="logging.properties"/>
+	        <ant:include name="policy.all"/>
+	        <ant:include name="run*"/>
+	        <ant:include name="logs/"/>
+	        <ant:include name="META-INF/"/>
+	      </ant:fileset>
+	      <ant:fileset dir=".">
+	        <ant:include name="JiniSCSL3.1.pdf"/>
+	      </ant:fileset>
+	    </ant:copy>
+	    <deploy:copy-deps todir="${maven.dist.bin.assembly.dir}"/>
+	</postGoal>
+</project>

@@ -1,0 +1,1 @@
+java -Djava.util.logging.config.file=logging.properties -Djava.security.manager= -Djava.security.policy=policy.all -Dorg.tiling.computefarm.rmi.server.codebase.template=http://%COMPUTERNAME%:${port}/computefarm-0.8.2.jar -jar computefarm-0.8.2.jar

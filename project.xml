@@ -1,0 +1,19 @@
+<project>
+	<extend>../project.xml</extend>
+    <id>computefarm</id>
+	<name>Compute Farm Framework</name>
+    <dependencies>
+      <dependency>
+        <groupId>jini</groupId>
+        <artifactId>jini-core</artifactId>
+        <version>2.0_1</version>
+        <url>http://wwws.sun.com/software/communitysource/jini/download.html</url>
+      </dependency>
+      <dependency>
+        <groupId>jini</groupId>
+        <artifactId>jini-ext</artifactId>
+        <version>2.0_1</version>
+        <url>http://wwws.sun.com/software/communitysource/jini/download.html</url>
+      </dependency>
+    </dependencies>
+</project>
